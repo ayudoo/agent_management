@@ -8,7 +8,7 @@ Agent Management
 **This module is in pre-alpha state and will change to a higher extend.
 Feel free to provide feedback.**
 
-Handle business relationships with agents, evaluate und approve their commissions.
+Handle business relationships with agents, evaluate and approve their commissions.
 
 
 **Table of contents**
@@ -50,7 +50,7 @@ You can make your products non-commissionable by unchecking the option in the pr
 
 
 Evaluation and Approval
-~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^
 
 The commissions will find their way down to the posted invoice. However, they still
 need to be approved. To do this, please go to the `Invoicing` app and open
@@ -59,7 +59,7 @@ need to be approved. To do this, please go to the `Invoicing` app and open
 
 
 Bug Tracker
-===========
+-----------
 
 Bugs are tracked on `GitHub Issues <https://github.com/ayudoo/agent_management>`_.
 In case of trouble, please check there if your issue has already been reported.
@@ -67,9 +67,9 @@ If you spotted it first, help us smashing it by providing a detailed and welcome
 `feedback <https://github.com/ayudoo/agent_management/issues/new**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
 
 Credits
-=======
+-------
 
 Authors
-~~~~~~~
+^^^^^^^
 
 * Michael Jurke
