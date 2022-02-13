@@ -1,0 +1,579 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* agent_management
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-13 21:02+0000\n"
+"PO-Revision-Date: 2022-02-13 21:02+0000\n"
+"Last-Translator: <m.jurke@gmx.de>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: agent_management
+#: model:ir.model.fields,field_description:agent_management.field_account_bank_statement_line__agent_id
+#: model:ir.model.fields,field_description:agent_management.field_account_move__agent_id
+#: model:ir.model.fields,field_description:agent_management.field_account_payment__agent_id
+#: model:ir.model.fields,field_description:agent_management.field_agent_management_agent_report__agent_id
+#: model:ir.model.fields,field_description:agent_management.field_agent_management_commission_mixin__agent_id
+#: model:ir.model.fields,field_description:agent_management.field_res_partner__agent_id
+#: model:ir.model.fields,field_description:agent_management.field_res_partner_business_relationship__is_agent
+#: model:ir.model.fields,field_description:agent_management.field_res_users__agent_id
+#: model:ir.model.fields,field_description:agent_management.field_sale_order__agent_id
+#: model_terms:ir.ui.view,arch_db:agent_management.view_agent_report_search
+#: model_terms:ir.ui.view,arch_db:agent_management.view_agent_report_tree
+msgid "Agent"
+msgstr "Vertreter"
+
+#. module: agent_management
+#: model:res.partner.business_relationship,name:agent_management.business_relationship_agent
+msgid "Agent (B2B)"
+msgstr "Vertreter (B2B)"
+
+#. module: agent_management
+#: model:ir.model.fields,field_description:agent_management.field_res_partner__agent_commission
+#: model:ir.model.fields,field_description:agent_management.field_res_users__agent_commission
+msgid "Agent Commission"
+msgstr "Vertreterprovision"
+
+#. module: agent_management
+#: model:ir.actions.act_window,name:agent_management.action_agent_evaluation
+#: model:ir.model,name:agent_management.model_agent_management_agent_report
+#: model:ir.ui.menu,name:agent_management.menu_action_agent_evaluation
+msgid "Agent Evaluation"
+msgstr "Vertreterauswertung"
+
+#. module: agent_management
+#: model_terms:ir.ui.view,arch_db:agent_management.product_commissionable_template_form_view
+msgid "Agent Management"
+msgstr "Vertreterverwaltung"
+
+#. module: agent_management
+#: model:ir.model.fields,field_description:agent_management.field_res_partner__agent_partner_ids
+#: model:ir.model.fields,field_description:agent_management.field_res_users__agent_partner_ids
+msgid "Agent's Partners"
+msgstr "Kunden des Vertreters"
+
+#. module: agent_management
+#: model:ir.model.fields,field_description:agent_management.field_agent_management_agent_report__amount_commission
+#: model_terms:ir.ui.view,arch_db:agent_management.view_agent_report_tree
+msgid "Ammount Commission"
+msgstr "Provisionsbetrag"
+
+#. module: agent_management
+#: model_terms:ir.ui.view,arch_db:agent_management.view_agent_report_tree
+msgid "Amount Due"
+msgstr "Fälliger Betrag"
+
+#. module: agent_management
+#: model:ir.model.fields,field_description:agent_management.field_agent_management_agent_report__amount_residual_signed
+msgid "Amount Due in Invoice Currency"
+msgstr "Fehlender Betrag in Rechnungswährung"
+
+#. module: agent_management
+#: model:ir.actions.act_window,name:agent_management.action_agent_report_approve_commission
+msgid "Approve Commission"
+msgstr "Provision Bestätigen"
+
+#. module: agent_management
+#: model_terms:ir.ui.view,arch_db:agent_management.account_move_approve_commission_view
+msgid "Approve Commissions"
+msgstr "Provisionen Bestätigen"
+
+#. module: agent_management
+#: model:ir.model,name:agent_management.model_account_move_approve_commission
+msgid "Approve the commission of the selected invoices"
+msgstr "Die Provision der ausgewählten Rechnungen bestätigen"
+
+#. module: agent_management
+#: model:ir.model.fields,field_description:agent_management.field_account_bank_statement_line__approved_commission
+#: model:ir.model.fields,field_description:agent_management.field_account_move__approved_commission
+#: model:ir.model.fields,field_description:agent_management.field_account_payment__approved_commission
+#: model:ir.model.fields,field_description:agent_management.field_agent_management_agent_report__approved_commission
+msgid "Approved Commission"
+msgstr "Bestätigte Provision"
+
+#. module: agent_management
+#: model:ir.model.fields,field_description:agent_management.field_account_move_approve_commission__approved_commissions
+msgid "Approved Commissions"
+msgstr "Bestätigte Provisionen"
+
+#. module: agent_management
+#: model_terms:ir.ui.view,arch_db:agent_management.view_move_form
+msgid "Approved on"
+msgstr "Bestätigt am"
+
+#. module: agent_management
+#: model_terms:ir.ui.view,arch_db:agent_management.account_move_approve_commission_view
+msgid "Are you sure you want to reset already approved commissions?"
+msgstr ""
+"Sind Sie sicher, dass sie eine bereits bestätigte Provision zurücksetzen "
+"wollen?"
+
+#. module: agent_management
+#: model:ir.model,name:agent_management.model_res_partner_business_relationship
+msgid "Business Relationship, e.g. B2B, B2C"
+msgstr "Geschäftsbeziehung, bswp. B2B, B2C"
+
+#. module: agent_management
+#: model:ir.model.fields,field_description:agent_management.field_account_move_line__can_toggle_commissionable
+#: model:ir.model.fields,field_description:agent_management.field_agent_management_commission_line_mixin__can_toggle_commissionable
+#: model:ir.model.fields,field_description:agent_management.field_sale_order_line__can_toggle_commissionable
+msgid "Can Toggle Commissionable"
+msgstr "Provisionbar can umgeschaltet werden"
+
+#. module: agent_management
+#: model_terms:ir.ui.view,arch_db:agent_management.account_move_approve_commission_view
+msgid "Cancel"
+msgstr "Abbrechen"
+
+#. module: agent_management
+#: model:ir.model.fields.selection,name:agent_management.selection__agent_management_agent_report__state__cancel
+msgid "Cancelled"
+msgstr "Abgebrochen"
+
+#. module: agent_management
+#: model:ir.model.fields,help:agent_management.field_agent_management_agent_report__commercial_partner_id
+msgid "Commercial Entity"
+msgstr "Gewerbliche Einheit"
+
+#. module: agent_management
+#: model:ir.model.fields,field_description:agent_management.field_account_bank_statement_line__agent_commission
+#: model:ir.model.fields,field_description:agent_management.field_account_move__agent_commission
+#: model:ir.model.fields,field_description:agent_management.field_account_move_line__agent_commission
+#: model:ir.model.fields,field_description:agent_management.field_account_payment__agent_commission
+#: model:ir.model.fields,field_description:agent_management.field_agent_management_agent_report__agent_commission
+#: model:ir.model.fields,field_description:agent_management.field_agent_management_commission_mixin__agent_commission
+#: model:ir.model.fields,field_description:agent_management.field_sale_order__agent_commission
+#: model:ir.model.fields,field_description:agent_management.field_sale_order_line__agent_commission
+#: model_terms:ir.ui.view,arch_db:agent_management.view_agent_report_tree
+msgid "Commission"
+msgstr "Provision"
+
+#. module: agent_management
+#: model:ir.model.fields,field_description:agent_management.field_account_bank_statement_line__amount_commission
+#: model:ir.model.fields,field_description:agent_management.field_account_move__amount_commission
+#: model:ir.model.fields,field_description:agent_management.field_account_move_line__amount_commission
+#: model:ir.model.fields,field_description:agent_management.field_account_payment__amount_commission
+#: model:ir.model.fields,field_description:agent_management.field_agent_management_commission_line_mixin__amount_commission
+#: model:ir.model.fields,field_description:agent_management.field_agent_management_commission_mixin__amount_commission
+#: model:ir.model.fields,field_description:agent_management.field_sale_order__amount_commission
+#: model:ir.model.fields,field_description:agent_management.field_sale_order_line__amount_commission
+#: model:ir.model.fields,field_description:agent_management.field_sale_report__amount_commission
+msgid "Commission Amount"
+msgstr "Provisionsbetrag"
+
+#. module: agent_management
+#: model:ir.model.fields,field_description:agent_management.field_account_bank_statement_line__amount_commission_base
+#: model:ir.model.fields,field_description:agent_management.field_account_move__amount_commission_base
+#: model:ir.model.fields,field_description:agent_management.field_account_payment__amount_commission_base
+#: model:ir.model.fields,field_description:agent_management.field_agent_management_agent_report__amount_commission_base
+#: model:ir.model.fields,field_description:agent_management.field_agent_management_commission_mixin__amount_commission_base
+#: model:ir.model.fields,field_description:agent_management.field_sale_order__amount_commission_base
+#: model_terms:ir.ui.view,arch_db:agent_management.view_agent_report_tree
+msgid "Commission Base"
+msgstr "Provisionsgrundlage"
+
+#. module: agent_management
+#: model:ir.model.fields,field_description:agent_management.field_agent_management_agent_report__commission_date
+#: model_terms:ir.ui.view,arch_db:agent_management.view_agent_report_tree
+msgid "Commission Date"
+msgstr "Provisionsdatum"
+
+#. module: agent_management
+#: model_terms:ir.ui.view,arch_db:agent_management.view_agent_report_form
+msgid "Commission Details"
+msgstr "Provisionsdetails"
+
+#. module: agent_management
+#: model:ir.model,name:agent_management.model_agent_management_commission_line_mixin
+msgid "Commission Line Mixin"
+msgstr "Provisions-Zeilen-Mixin"
+
+#. module: agent_management
+#: model:ir.model,name:agent_management.model_agent_management_commission_mixin
+msgid "Commission Mixin"
+msgstr "Provisions-Mixin"
+
+#. module: agent_management
+#: model:ir.model.fields,field_description:agent_management.field_account_move_line__commissionable
+#: model:ir.model.fields,field_description:agent_management.field_agent_management_commission_line_mixin__commissionable
+#: model:ir.model.fields,field_description:agent_management.field_product_product__commissionable
+#: model:ir.model.fields,field_description:agent_management.field_product_template__commissionable
+#: model:ir.model.fields,field_description:agent_management.field_sale_order_line__commissionable
+msgid "Commissionable"
+msgstr "Provisionierbar"
+
+#. module: agent_management
+#: model_terms:ir.ui.view,arch_db:agent_management.view_agent_report_search
+msgid "Commissioned"
+msgstr "Provisioniert"
+
+#. module: agent_management
+#: model:ir.model.fields,field_description:agent_management.field_account_move_approve_commission__commissions_to_approve
+msgid "Commissions to Approve"
+msgstr "Provisionen zum Bestätigen"
+
+#. module: agent_management
+#: model:ir.model,name:agent_management.model_res_partner
+msgid "Contact"
+msgstr "Kontakt"
+
+#. module: agent_management
+#: model:ir.model.fields,field_description:agent_management.field_account_move_approve_commission__create_uid
+msgid "Created by"
+msgstr "Erstellt am"
+
+#. module: agent_management
+#: model:ir.model.fields,field_description:agent_management.field_account_move_approve_commission__create_date
+msgid "Created on"
+msgstr "Erstellt von"
+
+#. module: agent_management
+#: model:ir.model.fields,field_description:agent_management.field_account_move__currency_id
+#: model:ir.model.fields,field_description:agent_management.field_account_move_line__currency_id
+#: model:ir.model.fields,field_description:agent_management.field_agent_management_agent_report__currency_id
+#: model:ir.model.fields,field_description:agent_management.field_agent_management_commission_line_mixin__currency_id
+#: model:ir.model.fields,field_description:agent_management.field_agent_management_commission_mixin__currency_id
+#: model:ir.model.fields,field_description:agent_management.field_sale_order__currency_id
+#: model:ir.model.fields,field_description:agent_management.field_sale_order_line__currency_id
+msgid "Currency"
+msgstr "Währung"
+
+#. module: agent_management
+#: model_terms:ir.ui.view,arch_db:agent_management.view_agent_report_form
+#: model_terms:ir.ui.view,arch_db:agent_management.view_agent_report_tree
+msgid "Customer"
+msgstr "Kunde"
+
+#. module: agent_management
+#: model:ir.model.fields.selection,name:agent_management.selection__agent_management_agent_report__move_type__out_refund
+msgid "Customer Credit Note"
+msgstr "Kunden-Gutschrift"
+
+#. module: agent_management
+#: model:ir.model.fields.selection,name:agent_management.selection__agent_management_agent_report__move_type__out_invoice
+msgid "Customer Invoice"
+msgstr "Ausgangsrechnung"
+
+#. module: agent_management
+#: model:ir.model.fields,field_description:agent_management.field_account_bank_statement_line__commission_date
+#: model:ir.model.fields,field_description:agent_management.field_account_move__commission_date
+#: model:ir.model.fields,field_description:agent_management.field_account_payment__commission_date
+msgid "Date when the commission was approved"
+msgstr "Datum, an dem die Provision bestätigt wurde"
+
+#. module: agent_management
+#: model:ir.model.fields,field_description:agent_management.field_account_bank_statement_line__default_agent_commission
+#: model:ir.model.fields,field_description:agent_management.field_account_move__default_agent_commission
+#: model:ir.model.fields,field_description:agent_management.field_account_payment__default_agent_commission
+#: model:ir.model.fields,field_description:agent_management.field_agent_management_commission_mixin__default_agent_commission
+#: model:ir.model.fields,field_description:agent_management.field_sale_order__default_agent_commission
+msgid "Default commission"
+msgstr "Voreingestellte Provision"
+
+#. module: agent_management
+#: model:ir.model.fields,field_description:agent_management.field_account_move__display_name
+#: model:ir.model.fields,field_description:agent_management.field_account_move_approve_commission__display_name
+#: model:ir.model.fields,field_description:agent_management.field_account_move_line__display_name
+#: model:ir.model.fields,field_description:agent_management.field_agent_management_agent_report__display_name
+#: model:ir.model.fields,field_description:agent_management.field_agent_management_commission_line_mixin__display_name
+#: model:ir.model.fields,field_description:agent_management.field_agent_management_commission_mixin__display_name
+#: model:ir.model.fields,field_description:agent_management.field_product_product__display_name
+#: model:ir.model.fields,field_description:agent_management.field_product_template__display_name
+#: model:ir.model.fields,field_description:agent_management.field_res_partner__display_name
+#: model:ir.model.fields,field_description:agent_management.field_res_partner_business_relationship__display_name
+#: model:ir.model.fields,field_description:agent_management.field_sale_order__display_name
+#: model:ir.model.fields,field_description:agent_management.field_sale_order_line__display_name
+#: model:ir.model.fields,field_description:agent_management.field_sale_report__display_name
+msgid "Display Name"
+msgstr "Anzeigename"
+
+#. module: agent_management
+#: model:ir.model.fields.selection,name:agent_management.selection__agent_management_agent_report__state__draft
+#: model_terms:ir.ui.view,arch_db:agent_management.view_agent_report_search
+msgid "Draft"
+msgstr "Entwurf"
+
+#. module: agent_management
+#: model:ir.model.fields,help:agent_management.field_account_move_approve_commission__invalid_invoices
+msgid "Draft and cancelled invoices."
+msgstr "Entwürfe und abgebrochene Rechnungen."
+
+#. module: agent_management
+#: model_terms:ir.ui.view,arch_db:agent_management.view_agent_report_search
+msgid "Group By"
+msgstr "Gruppieren nach"
+
+#. module: agent_management
+#: model:ir.model.fields,field_description:agent_management.field_account_bank_statement_line__has_agent_commission
+#: model:ir.model.fields,field_description:agent_management.field_account_move__has_agent_commission
+#: model:ir.model.fields,field_description:agent_management.field_account_payment__has_agent_commission
+#: model:ir.model.fields,field_description:agent_management.field_agent_management_commission_mixin__has_agent_commission
+#: model:ir.model.fields,field_description:agent_management.field_sale_order__has_agent_commission
+msgid "Has Agent Commission"
+msgstr "Hat Vertreterprovision"
+
+#. module: agent_management
+#: model:ir.model.fields,field_description:agent_management.field_account_move__id
+#: model:ir.model.fields,field_description:agent_management.field_account_move_approve_commission__id
+#: model:ir.model.fields,field_description:agent_management.field_account_move_line__id
+#: model:ir.model.fields,field_description:agent_management.field_agent_management_agent_report__id
+#: model:ir.model.fields,field_description:agent_management.field_agent_management_commission_line_mixin__id
+#: model:ir.model.fields,field_description:agent_management.field_agent_management_commission_mixin__id
+#: model:ir.model.fields,field_description:agent_management.field_product_product__id
+#: model:ir.model.fields,field_description:agent_management.field_product_template__id
+#: model:ir.model.fields,field_description:agent_management.field_res_partner__id
+#: model:ir.model.fields,field_description:agent_management.field_res_partner_business_relationship__id
+#: model:ir.model.fields,field_description:agent_management.field_sale_order__id
+#: model:ir.model.fields,field_description:agent_management.field_sale_order_line__id
+#: model:ir.model.fields,field_description:agent_management.field_sale_report__id
+msgid "ID"
+msgstr ""
+
+#. module: agent_management
+#: model:ir.model.fields,field_description:agent_management.field_account_move_approve_commission__invalid_invoices
+msgid "Invalid Invoices"
+msgstr "Ungültige Rechnungen"
+
+#. module: agent_management
+#: model:ir.model.fields,field_description:agent_management.field_agent_management_agent_report__invoice_id
+#: model_terms:ir.ui.view,arch_db:agent_management.view_agent_report_form
+#: model_terms:ir.ui.view,arch_db:agent_management.view_agent_report_tree
+msgid "Invoice"
+msgstr "Rechnung"
+
+#. module: agent_management
+#: model:ir.model.fields,field_description:agent_management.field_agent_management_agent_report__invoice_date
+#: model_terms:ir.ui.view,arch_db:agent_management.view_agent_report_search
+msgid "Invoice Date"
+msgstr "Rechnungsdatum"
+
+#. module: agent_management
+#: model:ir.model.fields,field_description:agent_management.field_agent_management_agent_report__name
+msgid "Invoice Number"
+msgstr "Rechnungsnummer"
+
+#. module: agent_management
+#: model:ir.model.fields,field_description:agent_management.field_agent_management_agent_report__state
+msgid "Invoice Status"
+msgstr "Rechnungsstatus"
+
+#. module: agent_management
+#: model:ir.model.fields,field_description:agent_management.field_agent_management_agent_report__move_type
+msgid "Invoice Type"
+msgstr "Rechnungstyp"
+
+#. module: agent_management
+#: model:ir.model.fields,field_description:agent_management.field_res_partner__is_agent
+#: model:ir.model.fields,field_description:agent_management.field_res_users__is_agent
+#: model:ir.model.fields,field_description:agent_management.field_sale_report__is_agent
+msgid "Is Agent"
+msgstr "Ist ein Agent"
+
+#. module: agent_management
+#: model:ir.model,name:agent_management.model_account_move
+#: model:ir.model.fields.selection,name:agent_management.selection__agent_management_agent_report__move_type__entry
+msgid "Journal Entry"
+msgstr "Buchungssatz"
+
+#. module: agent_management
+#: model:ir.model,name:agent_management.model_account_move_line
+msgid "Journal Item"
+msgstr "Buchungszeile"
+
+#. module: agent_management
+#: model:ir.model.fields,field_description:agent_management.field_account_move____last_update
+#: model:ir.model.fields,field_description:agent_management.field_account_move_approve_commission____last_update
+#: model:ir.model.fields,field_description:agent_management.field_account_move_line____last_update
+#: model:ir.model.fields,field_description:agent_management.field_agent_management_agent_report____last_update
+#: model:ir.model.fields,field_description:agent_management.field_agent_management_commission_line_mixin____last_update
+#: model:ir.model.fields,field_description:agent_management.field_agent_management_commission_mixin____last_update
+#: model:ir.model.fields,field_description:agent_management.field_product_product____last_update
+#: model:ir.model.fields,field_description:agent_management.field_product_template____last_update
+#: model:ir.model.fields,field_description:agent_management.field_res_partner____last_update
+#: model:ir.model.fields,field_description:agent_management.field_res_partner_business_relationship____last_update
+#: model:ir.model.fields,field_description:agent_management.field_sale_order____last_update
+#: model:ir.model.fields,field_description:agent_management.field_sale_order_line____last_update
+#: model:ir.model.fields,field_description:agent_management.field_sale_report____last_update
+msgid "Last Modified on"
+msgstr "Zuletzt geändert am"
+
+#. module: agent_management
+#: model:ir.model.fields,field_description:agent_management.field_account_move_approve_commission__write_uid
+msgid "Last Updated by"
+msgstr "Zuletzt aktualisiert von"
+
+#. module: agent_management
+#: model:ir.model.fields,field_description:agent_management.field_account_move_approve_commission__write_date
+msgid "Last Updated on"
+msgstr "Zuletzt aktualisiert am"
+
+#. module: agent_management
+#: model_terms:ir.ui.view,arch_db:agent_management.view_agent_report_search
+msgid "Not Commissioned"
+msgstr "Nicht Provisioniert"
+
+#. module: agent_management
+#: model:ir.model.fields,field_description:agent_management.field_account_move__partner_id
+#: model:ir.model.fields,field_description:agent_management.field_agent_management_agent_report__partner_id
+#: model:ir.model.fields,field_description:agent_management.field_agent_management_commission_mixin__partner_id
+#: model:ir.model.fields,field_description:agent_management.field_sale_order__partner_id
+#: model_terms:ir.ui.view,arch_db:agent_management.view_agent_report_search
+msgid "Partner"
+msgstr ""
+
+#. module: agent_management
+#: model:ir.model.fields,field_description:agent_management.field_agent_management_agent_report__commercial_partner_id
+msgid "Partner Company"
+msgstr "Partnerfirma"
+
+#. module: agent_management
+#: model_terms:ir.ui.view,arch_db:agent_management.view_agent_report_search
+msgid "Period"
+msgstr "Zeitraum"
+
+#. module: agent_management
+#: model:ir.model.fields.selection,name:agent_management.selection__agent_management_agent_report__state__posted
+#: model_terms:ir.ui.view,arch_db:agent_management.view_agent_report_search
+msgid "Posted"
+msgstr "Gebucht"
+
+#. module: agent_management
+#: model:ir.model,name:agent_management.model_product_product
+msgid "Product"
+msgstr "Produkt"
+
+#. module: agent_management
+#: model:ir.model,name:agent_management.model_product_template
+msgid "Product Template"
+msgstr "Produktvorlage"
+
+#. module: agent_management
+#: model:ir.model.fields.selection,name:agent_management.selection__agent_management_agent_report__move_type__in_receipt
+msgid "Purchase Receipt"
+msgstr "Einkauf Bestätigung"
+
+#. module: agent_management
+#: model:ir.model.fields,help:agent_management.field_agent_management_agent_report__amount_residual_signed
+msgid "Remaining amount due in the currency of the invoice."
+msgstr "Übriger offener Betrag in der Rechnungswährung"
+
+#. module: agent_management
+#: model_terms:ir.ui.view,arch_db:agent_management.account_move_approve_commission_view
+msgid "Reset Approved Commissions"
+msgstr "Bestätigte Provision zurücksetzen"
+
+#. module: agent_management
+#: model:ir.model,name:agent_management.model_sale_report
+msgid "Sales Analysis Report"
+msgstr "Verkaufsanalysebericht"
+
+#. module: agent_management
+#: model:ir.model,name:agent_management.model_sale_order
+msgid "Sales Order"
+msgstr "Verkaufsauftrag"
+
+#. module: agent_management
+#: model:ir.model,name:agent_management.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Auftragsposition"
+
+#. module: agent_management
+#: model:ir.model.fields.selection,name:agent_management.selection__agent_management_agent_report__move_type__out_receipt
+msgid "Sales Receipt"
+msgstr "Buchen von Einnahmen"
+
+#. module: agent_management
+#: model_terms:ir.ui.view,arch_db:agent_management.view_agent_report_search
+msgid "Search Invoice"
+msgstr "Rechnungen Durchsuchen"
+
+#. module: agent_management
+#: model:ir.model.fields,help:agent_management.field_res_partner__is_agent
+#: model:ir.model.fields,help:agent_management.field_res_partner_business_relationship__is_agent
+#: model:ir.model.fields,help:agent_management.field_res_users__is_agent
+#: model:ir.model.fields,help:agent_management.field_sale_report__is_agent
+msgid "Specify, if this is an agent for commercial transactions"
+msgstr ""
+"Festlegen, ob der Nutzer ein Vertreter für kommerzielle Transaktionen ist"
+
+#. module: agent_management
+#: model_terms:ir.ui.view,arch_db:agent_management.view_agent_report_tree
+msgid "Status"
+msgstr ""
+
+#. module: agent_management
+#: model:ir.model.fields,help:agent_management.field_account_bank_statement_line__agent_id
+#: model:ir.model.fields,help:agent_management.field_account_move__agent_id
+#: model:ir.model.fields,help:agent_management.field_account_payment__agent_id
+#: model:ir.model.fields,help:agent_management.field_agent_management_agent_report__agent_id
+#: model:ir.model.fields,help:agent_management.field_agent_management_commission_mixin__agent_id
+#: model:ir.model.fields,help:agent_management.field_sale_order__agent_id
+msgid "The agent who placed this partner"
+msgstr "Der Vertreter des Partners"
+
+#. module: agent_management
+#: model:ir.model.fields,help:agent_management.field_agent_management_agent_report__agent_commission
+msgid "The agent's commission"
+msgstr "Die Vertreterprovision"
+
+#. module: agent_management
+#: model:ir.model.fields,help:agent_management.field_account_bank_statement_line__agent_commission
+#: model:ir.model.fields,help:agent_management.field_account_move__agent_commission
+#: model:ir.model.fields,help:agent_management.field_account_move_line__agent_commission
+#: model:ir.model.fields,help:agent_management.field_account_payment__agent_commission
+#: model:ir.model.fields,help:agent_management.field_agent_management_commission_mixin__agent_commission
+#: model:ir.model.fields,help:agent_management.field_sale_order__agent_commission
+#: model:ir.model.fields,help:agent_management.field_sale_order_line__agent_commission
+msgid "The commission for this document"
+msgstr "Die Provision für dieses Dokument"
+
+#. module: agent_management
+#: model:ir.model.fields,help:agent_management.field_account_bank_statement_line__default_agent_commission
+#: model:ir.model.fields,help:agent_management.field_account_move__default_agent_commission
+#: model:ir.model.fields,help:agent_management.field_account_payment__default_agent_commission
+#: model:ir.model.fields,help:agent_management.field_agent_management_commission_mixin__default_agent_commission
+#: model:ir.model.fields,help:agent_management.field_sale_order__default_agent_commission
+msgid "The commission from the agent or origin (refund)"
+msgstr "Die Provision des Vertreters oder Ursprungsdokument (Gutschriften)"
+
+#. module: agent_management
+#: model_terms:ir.ui.view,arch_db:agent_management.account_move_approve_commission_view
+msgid ""
+"There are no invoices in the selection, whose commission can be approved."
+msgstr ""
+"Es sind keine Rechnungen ausgewählt, deren Provision bestätigt werden "
+"könnte."
+
+#. module: agent_management
+#: model:ir.model.fields.selection,name:agent_management.selection__agent_management_agent_report__move_type__in_invoice
+msgid "Vendor Bill"
+msgstr "Eingangsrechnungen"
+
+#. module: agent_management
+#: model:ir.model.fields.selection,name:agent_management.selection__agent_management_agent_report__move_type__in_refund
+msgid "Vendor Credit Note"
+msgstr "Lieferanten-Gutschrift"
+
+#. module: agent_management
+#: model_terms:ir.ui.view,arch_db:agent_management.account_move_approve_commission_view
+msgid ""
+"You can approve the commissions of non-daft and not cancelled invoices, that are not yet\n"
+"          approved. The commission date will be set accordingly."
+msgstr ""
+"Sie können die Provision von Nicht-Entrwufs- und nicht abgebrochenen "
+"Rechnungen bestätigen. Das Provisionsdatum wird entsprechend gesetzt."
+
+#. module: agent_management
+#: model:ir.model.fields,field_description:agent_management.field_account_bank_statement_line__commissioned
+#: model:ir.model.fields,field_description:agent_management.field_account_move__commissioned
+#: model:ir.model.fields,field_description:agent_management.field_account_payment__commissioned
+#: model:ir.model.fields,field_description:agent_management.field_agent_management_agent_report__commissioned
+msgid "commissioned"
+msgstr "provisioniert"

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <record id="view_agent_report_tree" model="ir.ui.view">
+    <field name="name">agent_management.agent_evaluation.tree</field>
+    <field name="model">agent_management.agent_report</field>
+    <field name="arch" type="xml">
+      <tree
+        string="Invoice"
+        decoration-info="commission_date == False"
+        create="false"
+        edit="false"
+        editable="bottom">
+
+        <field name="state" string="Status"/>
+        <field name="agent_id" string="Agent"/>
+        <field name="partner_id" groups="base.group_user" string="Customer"/>
+        <field name="invoice_id" widget="many2one"/>
+        <field name="invoice_date"/>
+
+        <field name="amount_residual_signed" string="Amount Due" sum="Amount Due"/>
+        <field name="amount_commission_base" sum="Commission Base"/>
+        <field
+          name="agent_commission"
+          string="Commission"
+          widget="percentage"
+          avg="Commission"/>
+        <field name="commission_date" string="Commission Date"/>
+        <field name="amount_commission" string="Ammount Commission" sum="Ammount Commission"/>
+
+        <field name="currency_id" invisible="1"/>
+        <field name="move_type" invisible="context.get('move_type',True)"/>
+      </tree>
+    </field>
+  </record>
+
+  <record id="view_agent_report_form" model="ir.ui.view">
+    <field name="name">agent_management.agent_evaluation.form</field>
+    <field name="model">agent_management.agent_report</field>
+    <field name="arch" type="xml">
+      <form string="Commission Details" class="o_invoice_form" create="false" edit="false">
+        <header>
+          <field name="state" widget="statusbar" statusbar_visible="draft,posted"/>
+        </header>
+        <sheet string="Invoice">
+          <span class="o_form_label"><field
+            name="move_type"
+            attrs="{'invisible': [('move_type', '=', 'entry')]}"
+            readonly="1"
+            nolabel="1"/></span>
+          <h1 class="mt0">
+            <div>
+              <field name="name" readonly="1" class="oe_inline"/>
+            </div>
+          </h1>
+          <group>
+            <group>
+              <field
+                string="Customer"
+                name="partner_id"
+                context="{'search_default_customer':1, 'show_address': 1, 'default_company_type': 'company'}"
+                options='{"always_reload": True, "no_quick_create": True}'
+                domain="[('customer_rank', '>', 0)]"/>
+              <field name="invoice_date"/>
+            </group>
+            <group>
+              <field name="agent_id"/>
+              <field name="agent_commission"/>
+              <field name="commission_date"/>
+              <field name="amount_commission"/>
+            </group>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="view_agent_report_search" model="ir.ui.view">
+    <field name="name">agent_management.agent_report.select</field>
+    <field name="model">agent_management.agent_report</field>
+    <field name="arch" type="xml">
+      <search string="Search Invoice">
+        <field name="agent_id" string="Agent"/>
+        <field name="partner_id" string="Partner"/>
+        <field name="invoice_date" string="Period"/>
+        <filter name="commissioned" string="Commissioned" domain="[('commissioned','=',True)]"/>
+        <filter
+          name="not_commissioned"
+          string="Not Commissioned"
+          domain="[('commissioned','=',False)]"/>
+        <separator/>
+        <filter name="posted" string="Posted" domain="[('state','=','posted')]"/>
+        <filter name="draft" string="Draft" domain="[('state','=','draft')]"/>
+        <separator/>
+        <group expand="0" string="Group By">
+          <filter name="group_by_agent_id" string="Agent" context="{'group_by':'agent_id'}"/>
+          <filter
+            name="group_by_partner_id"
+            string="Partner"
+            context="{'group_by':'commercial_partner_id'}"/>
+          <filter
+            name="group_by_invoice_date"
+            string="Invoice Date"
+            context="{'group_by':'invoice_date'}"/>
+        </group>
+      </search>
+    </field>
+  </record>
+
+  <record id="action_agent_evaluation" model="ir.actions.act_window">
+    <field name="name">Agent Evaluation</field>
+    <field name="res_model">agent_management.agent_report</field>
+    <field name="view_mode">tree,form,pivot,graph</field>
+    <field name="context">
+      { 'search_default_group_by_agent_id': 1, 'search_default_group_by_invoice_date': 1 }
+    </field>
+    <field name="domain">
+      [('agent_id','!=',False)]
+    </field>
+    <field
+      name="view_ids"
+      eval="[
+          (5, 0, 0),
+          (0, 0, {'view_mode': 'tree', 'view_id': ref('view_agent_report_tree')}),
+          (0, 0, {'view_mode': 'form', 'view_id': ref('view_agent_report_form')}),
+        ]"/>
+    <field name="search_view_id" ref="view_agent_report_search"/>
+  </record>
+
+  <menuitem
+    action="action_agent_evaluation"
+    id="menu_action_agent_evaluation"
+    parent="account.menu_finance_receivables"
+    sequence="120"/>
+</odoo>

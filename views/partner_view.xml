@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <record id="view_partner_agent_manager_form" model="ir.ui.view">
+    <field name="name">agent_management.base.contacts</field>
+    <field name="model">res.partner</field>
+    <field
+      name="inherit_id"
+      ref="business_relationships.view_partner_business_relationship_form"/>
+    <field name="arch" type="xml">
+      <field name="type" position="before">
+        <field name="is_agent" invisible="1"/>
+        <field
+          name="agent_commission"
+          widget="percentage"
+          attrs="{'invisible': [('is_agent','=', False)]}"/>
+      </field>
+      <field name="category_id" position="after">
+        <field name="agent_id" attrs="{'invisible': [('is_agent','=', True)]}"/>
+      </field>
+    </field>
+  </record>
+
+  <record id="view_partner_agent_commission_tree" model="ir.ui.view">
+    <field name="name">agent_management.base.view_partner_tree</field>
+    <field name="model">res.partner</field>
+    <field name="inherit_id" ref="base.view_partner_tree"/>
+    <field name="arch" type="xml">
+      <field name="email" position="after">
+        <field name="agent_commission" widget="percentage"/>
+      </field>
+    </field>
+  </record>
+</odoo>

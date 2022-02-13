@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_agent_management,agent_management.agent_report,model_agent_management_agent_report,account.group_account_manager,1,1,1,1
+access_account_move_approve_commission,access_account_move_approve_commission,model_account_move_approve_commission,account.group_account_manager,1,1,1,1

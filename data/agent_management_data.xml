@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data noupdate="1">
+
+    <record
+      forcecreate="True"
+      id="business_relationship_agent"
+      model="res.partner.business_relationship">
+      <field name="sequence">99</field>
+      <field name="name">Agent (B2B)</field>
+      <field name="color">8</field>
+      <field name="show_line_subtotals_tax_selection">tax_excluded</field>
+      <field name="is_agent">True</field>
+    </record>
+
+  </data>
+</odoo>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+  <record id="account_move_approve_commission_view" model="ir.ui.view">
+    <field name="name">account.move.approve_commission.form</field>
+    <field name="model">account.move.approve_commission</field>
+    <field name="arch" type="xml">
+      <form string="Approve Commissions">
+        <group>
+          <field name="commissions_to_approve"/>
+          <field name="invalid_invoices"/>
+          <field name="approved_commissions"/>
+        </group>
+        <p class="oe_grey">
+          You can approve the commissions of non-daft and not cancelled invoices, that are not yet
+          approved. The commission date will be set accordingly.</p>
+        <p attrs="{'invisible': [('commissions_to_approve','!=',0)]}">
+          There are no invoices in the selection, whose commission can be approved.</p>
+        <footer>
+          <button
+            attrs="{'invisible': [('commissions_to_approve','=',0)]}"
+            string="Approve Commissions"
+            name="move_approve_commission"
+            type="object"
+            default_focus="1"
+            class="btn-primary"/>
+          <button
+            attrs="{'invisible': [('approved_commissions','=',0)]}"
+            string="Reset Approved Commissions"
+            name="invoice_reset_approved_commission"
+            type="object"
+            confirm="Are you sure you want to reset already approved commissions?"
+            class="btn-danger"/>
+          <button string="Cancel" class="btn-default" special="cancel"/>
+        </footer>
+      </form>
+    </field>
+  </record>
+
+  <record id="action_agent_report_approve_commission" model="ir.actions.act_window">
+    <field name="name">Approve Commission</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">account.move.approve_commission</field>
+    <field name="view_mode">form</field>
+    <field name="target">new</field>
+    <field
+      name="binding_model_id"
+      ref="agent_management.model_agent_management_agent_report"/>
+    <field name="binding_view_types">form,list</field>
+  </record>
+
+</odoo>
