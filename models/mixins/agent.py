@@ -88,14 +88,14 @@ class CommissionLineMixin(models.AbstractModel):
 
     currency_id = fields.Many2one("res.currency")
 
-    @api.model
-    def create(self, values):
+    @api.model_create_multi
+    def create(self, values_list):
         """Set commissionable, works with events and _cart_update"""
-        record = super().create(values)
-        record._set_commissionable(update_existing=True)
-        return record
+        records = super().create(values_list)
+        for record in records:
+            record._set_commissionable(update_existing=True)
+        return records
 
-    @api.depends("product_id")
     @api.onchange("product_id")
     def _set_commissionable(self, update_existing=False):
         for record in self:

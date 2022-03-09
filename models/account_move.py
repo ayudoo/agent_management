@@ -124,17 +124,17 @@ class AccountMoveLine(models.Model):
     _inherit = ["agent_management.commission.line.mixin", "account.move.line"]
     _name = "account.move.line"
 
-    @api.model
-    def create(self, values):
-        record = super().create(values)
-        if hasattr(record, "sale_line_ids") and len(record.sale_line_ids):
-            # Note, sale lines are combined by product. Thus, commissionable
-            # is the same value.
-            # TODO: switch to copy the commsion amount only, according to invoice
-            # settings
+    @api.onchange("product_id")
+    def _set_commissionable(self, update_existing=False):
+        for record in self:
             if record.can_toggle_commissionable:
-                record.commissionable = record.sale_line_ids.commissionable
-        return record
+                if hasattr(record, "sale_line_ids") and len(record.sale_line_ids):
+                    record.commissionable = record.sale_line_ids.commissionable
+                elif record.product_id:
+                    if not record.product_id.commissionable:
+                        record.commissionable = False
+                    elif update_existing or isinstance(record.id, models.NewId):
+                        record.commissionable = True
 
     @api.depends("move_id.agent_commission")
     def _compute_agent_commission(self):
