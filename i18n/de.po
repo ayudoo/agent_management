@@ -121,6 +121,12 @@ msgid "Business Relationship, e.g. B2B, B2C"
 msgstr "Geschäftsbeziehung, bswp. B2B, B2C"
 
 #. module: agent_management
+#: model:ir.model.fields,field_description:agent_management.field_product_product__can_be_commissionable
+#: model:ir.model.fields,field_description:agent_management.field_product_template__can_be_commissionable
+msgid "Can Be Commissionable"
+msgstr "Kann provisionierbar sein"
+
+#. module: agent_management
 #: model:ir.model.fields,field_description:agent_management.field_account_move_line__can_toggle_commissionable
 #: model:ir.model.fields,field_description:agent_management.field_agent_management_commission_line_mixin__can_toggle_commissionable
 #: model:ir.model.fields,field_description:agent_management.field_sale_order_line__can_toggle_commissionable
