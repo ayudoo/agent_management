@@ -8,7 +8,10 @@
     <field name="arch" type="xml">
       <xpath expr="//page[@name='sales']/group[@name='sale']" position="inside">
         <group string="Agent Management">
-          <field name="commissionable"/>
+          <field name="can_change_commissionable" invisible="1"/>
+          <field
+            name="commissionable"
+            attrs="{'readonly': [('can_change_commissionable', '=', False)]}"/>
         </group>
       </xpath>
     </field>
