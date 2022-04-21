@@ -5,6 +5,13 @@ class SaleOrder(models.Model):
     _inherit = ["agent_management.commission.mixin", "sale.order"]
     _name = "sale.order"
 
+    @api.onchange('partner_id')
+    def onchange_partner_id(self):
+        super().onchange_partner_id()
+        # this method is called in website logic, i.e. after login
+        if self.agent_commission != self.agent_id.agent_commission:
+            self._set_agent_commission()
+
     @api.depends("order_line.price_subtotal", "order_line.commissionable")
     def _compute_amount_commission_base(self):
         for order in self:
