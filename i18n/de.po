@@ -54,6 +54,12 @@ msgid "Agent Management"
 msgstr "Vertreterverwaltung"
 
 #. module: agent_management
+#: model:ir.model.fields,field_description:agent_management.field_res_partner__agent_partner_count
+#: model:ir.model.fields,field_description:agent_management.field_res_users__agent_partner_count
+msgid "Agent Partner Count"
+msgstr "# Agentenkunden"
+
+#. module: agent_management
 #: model:ir.model.fields,field_description:agent_management.field_res_partner__agent_partner_ids
 #: model:ir.model.fields,field_description:agent_management.field_res_users__agent_partner_ids
 msgid "Agent's Partners"
@@ -266,6 +272,11 @@ msgstr "Kunden-Gutschrift"
 #: model:ir.model.fields.selection,name:agent_management.selection__agent_management_agent_report__move_type__out_invoice
 msgid "Customer Invoice"
 msgstr "Ausgangsrechnung"
+
+#. module: agent_management
+#: model_terms:ir.ui.view,arch_db:agent_management.view_partner_agent_manager_form
+msgid "Customers"
+msgstr "Kunden"
 
 #. module: agent_management
 #: model:ir.model.fields,field_description:agent_management.field_account_bank_statement_line__commission_date
