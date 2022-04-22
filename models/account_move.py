@@ -12,11 +12,11 @@ class AccoutMove(models.Model):
             if record.invoice_origin:
                 if record.move_type in ["out_refund", "in_refund"]:
                     origin_commission = self.env["account.move"].search(
-                        [["name", "=", self.invoice_origin]]
+                        [["name", "=", record.invoice_origin]]
                     )
                 else:
                     origin_commission = self.env["sale.order"].search(
-                        [["name", "=", self.invoice_origin]]
+                        [["name", "=", record.invoice_origin]]
                     )
 
             # Just set to the order's commission if the partner is same
