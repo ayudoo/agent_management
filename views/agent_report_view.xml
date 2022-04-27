@@ -91,6 +91,27 @@
         <filter name="posted" string="Posted" domain="[('state','=','posted')]"/>
         <filter name="draft" string="Draft" domain="[('state','=','draft')]"/>
         <separator/>
+        <filter
+          name="in_payment"
+          string="In Payment"
+          domain="[('payment_state', '=', 'in_payment'), ('state', '=', 'posted')]"/>
+        <filter
+          name="partial"
+          string="Partially Paid"
+          domain="[('payment_state', '=', 'partial'), ('state', '=', 'posted')]"/>
+        <filter
+          name="paid"
+          string="Paid"
+          domain="[('payment_state', '=', 'paid'), ('state', '=', 'posted')]"/>
+        <filter
+          name="unpaid"
+          string="Not Paid"
+          domain="[('payment_state', '=', 'not_paid'), ('state', '=', 'posted')]"/>
+        <filter
+          name="reversed"
+          string="Reversed"
+          domain="[('payment_state', '=', 'reversed'), ('state', '=', 'posted')]"/>
+        <separator/>
         <group expand="0" string="Group By">
           <filter name="group_by_agent_id" string="Agent" context="{'group_by':'agent_id'}"/>
           <filter
@@ -110,9 +131,11 @@
     <field name="name">Agent Evaluation</field>
     <field name="res_model">agent_management.agent_report</field>
     <field name="view_mode">tree,form,pivot,graph</field>
-    <field name="context">
-      { 'search_default_group_by_agent_id': 1, 'search_default_group_by_invoice_date': 1 }
-    </field>
+    <field name="context">{
+      'search_default_group_by_agent_id': 1,
+      'search_default_group_by_invoice_date': 1,
+      'search_default_paid': 1,
+    }</field>
     <field name="domain">
       [('agent_id','!=',False)]
     </field>

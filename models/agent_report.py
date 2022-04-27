@@ -98,6 +98,19 @@ class AgentReport(models.Model):
         readonly=True,
     )
 
+    payment_state = fields.Selection(
+        selection=[
+            ('not_paid', 'Not Paid'),
+            ('in_payment', 'In Payment'),
+            ('paid', 'Paid'),
+            ('partial', 'Partially Paid'),
+            ('reversed', 'Reversed'),
+            ('invoicing_legacy', 'Invoicing App Legacy'),
+        ],
+        string="Payment Status",
+        readonly=True,
+    )
+
     def _select(self):
         select_str = """
             SELECT
@@ -107,6 +120,7 @@ class AgentReport(models.Model):
                 am.currency_id,
                 am.move_type,
                 am.state,
+                am.payment_state,
                 am.name,
                 am.amount_residual_signed,
                 am.company_id,
