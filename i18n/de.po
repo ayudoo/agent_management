@@ -354,6 +354,12 @@ msgid "ID"
 msgstr ""
 
 #. module: agent_management
+#: model:ir.model.fields.selection,name:agent_management.selection__agent_management_agent_report__payment_state__in_payment
+#: model_terms:ir.ui.view,arch_db:agent_management.view_agent_report_search
+msgid "In Payment"
+msgstr "In Zahlung"
+
+#. module: agent_management
 #: model:ir.model.fields,field_description:agent_management.field_account_move_approve_commission__invalid_invoices
 msgid "Invalid Invoices"
 msgstr "Ungültige Rechnungen"
@@ -437,6 +443,24 @@ msgid "Not Commissioned"
 msgstr "Nicht Provisioniert"
 
 #. module: agent_management
+#: model:ir.model.fields.selection,name:agent_management.selection__agent_management_agent_report__payment_state__not_paid
+#: model_terms:ir.ui.view,arch_db:agent_management.view_agent_report_search
+msgid "Not Paid"
+msgstr "Nicht bezahlt"
+
+#. module: agent_management
+#: model:ir.model.fields.selection,name:agent_management.selection__agent_management_agent_report__payment_state__paid
+#: model_terms:ir.ui.view,arch_db:agent_management.view_agent_report_search
+msgid "Paid"
+msgstr "Bezahlt"
+
+#. module: agent_management
+#: model:ir.model.fields.selection,name:agent_management.selection__agent_management_agent_report__payment_state__partial
+#: model_terms:ir.ui.view,arch_db:agent_management.view_agent_report_search
+msgid "Partially Paid"
+msgstr "Teilzahlung"
+
+#. module: agent_management
 #: model:ir.model.fields,field_description:agent_management.field_account_move__partner_id
 #: model:ir.model.fields,field_description:agent_management.field_agent_management_agent_report__partner_id
 #: model:ir.model.fields,field_description:agent_management.field_agent_management_commission_mixin__partner_id
@@ -449,6 +473,11 @@ msgstr ""
 #: model:ir.model.fields,field_description:agent_management.field_agent_management_agent_report__commercial_partner_id
 msgid "Partner Company"
 msgstr "Partnerfirma"
+
+#. module: agent_management
+#: model:ir.model.fields,field_description:agent_management.field_agent_management_agent_report__payment_state
+msgid "Payment Status"
+msgstr "Zahlung Status"
 
 #. module: agent_management
 #: model_terms:ir.ui.view,arch_db:agent_management.view_agent_report_search
@@ -485,6 +514,12 @@ msgstr "Übriger offener Betrag in der Rechnungswährung"
 #: model_terms:ir.ui.view,arch_db:agent_management.account_move_approve_commission_view
 msgid "Reset Approved Commissions"
 msgstr "Bestätigte Provision zurücksetzen"
+
+#. module: agent_management
+#: model:ir.model.fields.selection,name:agent_management.selection__agent_management_agent_report__payment_state__reversed
+#: model_terms:ir.ui.view,arch_db:agent_management.view_agent_report_search
+msgid "Reversed"
+msgstr "Storniert"
 
 #. module: agent_management
 #: model:ir.model,name:agent_management.model_sale_report
