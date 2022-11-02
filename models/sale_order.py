@@ -6,8 +6,8 @@ class SaleOrder(models.Model):
     _name = "sale.order"
 
     @api.onchange('partner_id')
-    def onchange_partner_id(self):
-        super().onchange_partner_id()
+    def _br_onchange_partner_id(self):
+        super()._br_onchange_partner_id()
         # this method is called in website logic, i.e. after login
         if self.agent_commission != self.agent_id.agent_commission:
             self._set_agent_commission()

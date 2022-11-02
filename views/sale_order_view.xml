@@ -33,7 +33,7 @@
       </xpath>
 
       <xpath
-        expr="//field[@name='order_line']/form//field[@name='analytic_tag_ids']/.."
+        expr="//field[@name='order_line']/form//field[@name='analytic_distribution']/.."
         position="after">
         <field name="can_toggle_commissionable" invisible="1"/>
         <label
@@ -51,10 +51,10 @@
         </div>
       </xpath>
 
-      <field name="amount_total" position="after">
+      <xpath expr="//group[hasclass('oe_subtotal_footer')]" position="inside">
         <field name="amount_commission_base" attrs="{'invisible': [('agent_id','=',False)]}"/>
         <field name="amount_commission" attrs="{'invisible': [('agent_id','=',False)]}"/>
-      </field>
+      </xpath>
     </field>
   </record>
 

@@ -24,8 +24,12 @@
         "views/partner_view.xml",
         "views/product_template_view.xml",
         "views/sale_order_view.xml",
-        "views/templates.xml",
         "wizard/approve_commission_view.xml",
     ],
+    "assets": {
+        "web.assets_backend": [
+            "agent_management/static/src/js/commissionable_widget.js",
+        ],
+    },
     "license": "LGPL-3",
 }

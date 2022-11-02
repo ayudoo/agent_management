@@ -33,7 +33,7 @@
           }"/>
       </xpath>
 
-      <xpath expr="//field[@name='amount_total'][last()]" position="after">
+      <xpath expr="//field[hasclass('oe_subtotal_footer_separator')]" position="after">
         <field name="commissioned" invisible="1"/>
         <field name="amount_commission_base" attrs="{'invisible': [('agent_id','=',False)]}"/>
         <field

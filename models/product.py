@@ -47,9 +47,15 @@ class ProductProduct(models.Model):
     @api.model
     def _add_missing_default_values(self, values):
         defaults = super()._add_missing_default_values(values)
-        if "commissionable" not in values:
-            if not defaults.get("sale_ok", False):
-                defaults["commissionable"] = False
-            else:
-                defaults["commissionable"] = True
+
+        template_id = defaults.get("product_tmpl_id", None)
+
+        if template_id:
+            product_template = self.env['product.template'].browse(template_id)
+
+            if "commissionable" not in values:
+                if not (product_template.sale_ok or defaults.get("sale_ok", False)):
+                    defaults["commissionable"] = False
+                else:
+                    defaults["commissionable"] = True
         return defaults

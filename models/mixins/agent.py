@@ -18,17 +18,20 @@ class CommissionMixin(models.AbstractModel):
         help="The agent who placed this partner",
     )
 
-    @api.model
-    def create(self, values):
-        record = super().create(values)
-        if (
-            record.agent_id
-            and not record.agent_commission
-            and not record.has_agent_commission
-        ):
-            record._compute_default_agent_commission()
-            record.has_agent_commission = True
-            record.agent_commission = record.default_agent_commission
+    @api.model_create_multi
+    def create(self, values_list):
+        records = super().create(values_list)
+
+        for record in records:
+            if (
+                record.agent_id
+                and not record.agent_commission
+                and not record.has_agent_commission
+            ):
+                record._compute_default_agent_commission()
+                record.has_agent_commission = True
+                record.agent_commission = record.default_agent_commission
+
         return record
 
     @api.depends("agent_id")

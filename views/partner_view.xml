@@ -30,7 +30,7 @@
         </button>
       </div>
 
-      <field name="type" position="before">
+      <field name="vat" position="after">
         <field name="is_agent" invisible="1"/>
         <field
           name="agent_commission"
