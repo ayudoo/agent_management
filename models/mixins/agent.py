@@ -32,7 +32,7 @@ class CommissionMixin(models.AbstractModel):
                 record.has_agent_commission = True
                 record.agent_commission = record.default_agent_commission
 
-        return record
+        return records
 
     @api.depends("agent_id")
     def _compute_default_agent_commission(self):
