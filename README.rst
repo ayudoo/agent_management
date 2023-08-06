@@ -24,6 +24,7 @@ Features
 
 * create agent contacts with a commission percentage
 * set the agent that is responsible for a contact
+* use agents as salespersons
 * configure your commissionable products
 * review and approve your commissions
 * evaluate your agents and their commission amounts in report views

@@ -5,6 +5,17 @@ class SaleOrder(models.Model):
     _inherit = ["agent_management.commission.mixin", "sale.order"]
     _name = "sale.order"
 
+    user_id = fields.Many2one(
+        domain=lambda self: """[
+            ('|'),
+            ('partner_id.is_agent', '=', True),
+            ('&'),
+            ('groups_id', '=', {}),
+            ('share', '=', False), ('company_ids', '=', company_id)]""".format(
+                self.env.ref("sales_team.group_sale_salesman").id
+            ),
+        )
+
     @api.onchange('partner_id')
     def _br_onchange_partner_id(self):
         super()._br_onchange_partner_id()
