@@ -11,18 +11,23 @@ class CommissionMixin(models.AbstractModel):
     agent_id = fields.Many2one(
         "res.partner",
         string="Agent",
-        compute_sudo=True,
-        related="partner_id.agent_id",
-        store=True,
-        readonly=True,
         help="The agent who placed this partner",
     )
+
+    @api.onchange("partner_id")
+    def _set_agent_id(self):
+        for record in self:
+            record.agent_id = record.partner_id.agent_id
 
     @api.model_create_multi
     def create(self, values_list):
         records = super().create(values_list)
 
         for record in records:
+            # for orders, that aren't created using the form
+            if record.partner_id.agent_id and not record.agent_id:
+                record.agent = record.partner_id.agent_id
+
             if (
                 record.agent_id
                 and not record.agent_commission

@@ -45,9 +45,10 @@ class Partner(models.Model):
 
     @api.constrains("agent_id")
     def _reset_agent_id(self):
-        if self.is_agent and self.agent_id:
-            # silently reset the agent_id for agents
-            self.agent_id = None
+        for record in self:
+            if record.is_agent and record.agent_id:
+                # silently reset the agent_id for agents
+                record.agent_id = None
 
     def action_open_agent_partners(self):
         self.ensure_one()
