@@ -5,6 +5,9 @@ class Partner(models.Model):
     _inherit = ["res.partner"]
     _name = "res.partner"
 
+    def _commercial_fields(self):
+        return super()._commercial_fields() + ["agent_id"]
+
     is_agent = fields.Boolean(
         string="Is Agent",
         related="business_relationship_id.is_agent",
