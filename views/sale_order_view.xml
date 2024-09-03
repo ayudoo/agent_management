@@ -6,7 +6,13 @@
     <field name="inherit_id" ref="sale.view_order_form"/>
     <field name="arch" type="xml">
       <field name="payment_term_id" position="after">
-        <field name="agent_id" attrs="{'invisible': [('agent_id','=',False)]}" readonly="1" force_save="1"/>
+        <field
+          name="agent_id"
+          attrs="{
+            'readonly': [('state','not in',['draft','cancelled'])],
+            'invisible': [('agent_id','=',False)]
+          }"
+        />
         <field name="has_agent_commission" invisible="1"/>
         <field
           name="agent_commission"

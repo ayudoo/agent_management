@@ -10,7 +10,12 @@
       </field>
       <field name="team_id" position="after">
         <field name="commissioned" invisible="1"/>
-        <field name="agent_id" attrs="{'invisible': [('agent_id','=',False)]}"/>
+        <field name="agent_id"
+          attrs="{
+            'readonly': [('state','not in',['draft','cancelled'])],
+            'invisible': [('agent_id','=',False)]
+          }"
+        />
         <field name="has_agent_commission" invisible="1"/>
         <field
           name="agent_commission"
