@@ -10,7 +10,7 @@
           name="agent_id"
           attrs="{
             'readonly': [('state','not in',['draft','cancelled'])],
-            'invisible': [('agent_id','=',False)]
+            'invisible': [('state', 'in', ['done']),('agent_id','=',False)]
           }"
         />
         <field name="has_agent_commission" invisible="1"/>
