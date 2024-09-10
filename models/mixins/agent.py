@@ -26,7 +26,7 @@ class CommissionMixin(models.AbstractModel):
         for record in records:
             # for orders, that aren't created using the form
             if record.partner_id.agent_id and not record.agent_id:
-                record.agent = record.partner_id.agent_id
+                record.agent_id = record.partner_id.agent_id
 
             if (
                 record.agent_id
