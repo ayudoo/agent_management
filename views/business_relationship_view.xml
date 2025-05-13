@@ -5,10 +5,11 @@
     <field name="name">agent_management.res.partner.business_relationship.form</field>
     <field name="model">res.partner.business_relationship</field>
     <field name="inherit_id" ref="business_relationships.view_business_relationship_form"/>
+    <field name="priority">99</field>
     <field name="arch" type="xml">
-      <field name="show_line_subtotals_tax_selection" position="after">
+      <group name="options" position="inside">
         <field name="is_agent"/>
-      </field>
+      </group>
     </field>
   </record>
 
