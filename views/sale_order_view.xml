@@ -27,7 +27,6 @@
         expr="//field[@name='order_line']/tree/field[@name='price_subtotal']"
         position="before">
         <field name="can_toggle_commissionable" attrs="{'column_invisible': True}"/>
-        <field name="amount_commission" attrs="{'column_invisible': True}"/>
         <field name="agent_commission" attrs="{'column_invisible': True}"/>
         <field
           name="commissionable"

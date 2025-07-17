@@ -5,6 +5,30 @@ class AccoutMove(models.Model):
     _inherit = ["agent_management.commission.mixin", "account.move"]
     _name = "account.move"
 
+    def _compute_agent_currency_id(self):
+        for record in self:
+            record.agent_currency_id = self.company_id.currency_id
+
+    @api.depends("company_id")
+    def _compute_agent_currency_id(self):
+        for record in self:
+            record.agent_currency_id = self.company_id.currency_id
+
+    agent_currency_id = fields.Many2one(
+        "res.currency",
+        sting="Agent Currency",
+        compute=_compute_agent_currency_id
+    )
+
+    amount_commission = fields.Monetary(
+        currency_field="agent_currency_id",
+    )
+
+    amount_commission_base = fields.Monetary(
+        currency_field="agent_currency_id",
+        store=True,
+    )
+
     @api.depends("invoice_origin", "partner_id", "agent_id")
     def _compute_default_agent_commission(self):
         for record in self:
@@ -57,6 +81,7 @@ class AccoutMove(models.Model):
         "invoice_line_ids.price_subtotal",
         "invoice_line_ids.commissionable",
         "currency_id",
+        "agent_currency_id",
         "company_id",
         "move_type",
     )
@@ -75,32 +100,24 @@ class AccoutMove(models.Model):
             )
 
     @api.depends(
-        "invoice_line_ids.amount_commission",
+        "amount_commission_base",
         "agent_commission",
-        "currency_id",
-        "company_id",
-        "move_type",
     )
     def _compute_amount_commission(self):
         for record in self:
             if not record.agent_id:
                 return
 
-            amount_commission = sum(
-                line.amount_commission
-                for line in record.invoice_line_ids
-                if line.commissionable is True
-            )
-            record.amount_commission = record._to_invoice_amount(amount_commission)
+            record.amount_commission = record.amount_commission_base * record.agent_commission
 
     def _to_invoice_amount(self, amount):
         if (
-            self.currency_id
-            and self.company_id
-            and self.currency_id != self.company_id.currency_id
+            self.agent_currency_id
+            and self.currency_id
+            and self.agent_currency_id != self.currency_id
         ):
             currency_id = self.currency_id.with_context(date=self.invoice_date)
-            amount = currency_id.compute(amount, self.company_id.currency_id)
+            amount = currency_id.compute(amount, self.agent_currency_id)
         sign = self.move_type in ["in_refund", "out_refund"] and -1 or 1
         return sign * amount
 

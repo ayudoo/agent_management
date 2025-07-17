@@ -30,7 +30,6 @@
         expr="//field[@name='invoice_line_ids']/tree/field[@name='price_subtotal']"
         position="before">
         <field name="can_toggle_commissionable" attrs="{'column_invisible': True}"/>
-        <field name="amount_commission" attrs="{'column_invisible': True}"/>
         <field name="agent_commission" attrs="{'column_invisible': True}"/>
         <field
           name="commissionable"
@@ -42,6 +41,7 @@
       </xpath>
 
       <xpath expr="//field[hasclass('oe_subtotal_footer_separator')]" position="after">
+        <field name="agent_currency_id" invisible="1"/>
         <field name="commissioned" invisible="1"/>
         <field name="amount_commission_base" attrs="{'invisible': [('agent_id','=',False)]}"/>
         <field

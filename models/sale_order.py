@@ -36,14 +36,11 @@ class SaleOrder(models.Model):
                     amount_commission_base
                 )
 
-    @api.depends("order_line.amount_commission")
+    @api.depends("amount_commission_base", "agent_commission")
     def _compute_amount_commission(self):
         for record in self:
             if record.agent_id:
-                amount_commission = sum(
-                    line.amount_commission for line in record.order_line
-                )
-                record.amount_commission = amount_commission
+                record.amount_commission = record.amount_commission_base * record.agent_commission
 
     def _get_lines(self):
         return self.order_line

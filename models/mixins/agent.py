@@ -80,6 +80,7 @@ class CommissionMixin(models.AbstractModel):
         compute="_compute_amount_commission",
         readonly=True,
         store=True,
+        currency_field="currency_id",
     )
 
     amount_commission_base = fields.Monetary(
@@ -87,6 +88,7 @@ class CommissionMixin(models.AbstractModel):
         compute="_compute_amount_commission_base",
         store=True,
         readonly=True,
+        currency_field="currency_id",
     )
 
 
@@ -126,21 +128,4 @@ class CommissionLineMixin(models.AbstractModel):
     can_toggle_commissionable = fields.Boolean(
         compute=_compute_can_toggle_commissionable,
         store=False,
-    )
-
-    @api.depends("commissionable", "agent_commission", "price_subtotal")
-    def _compute_amount_commission(self):
-        for record in self:
-            if record.commissionable and record.agent_commission:
-                record.amount_commission = (
-                    record.price_subtotal * record.agent_commission
-                )
-            else:
-                record.amount_commission = 0.0
-
-    amount_commission = fields.Monetary(
-        string="Commission Amount",
-        compute=_compute_amount_commission,
-        readonly=True,
-        store=True,
     )
