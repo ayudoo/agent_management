@@ -20,6 +20,11 @@ class Partner(models.Model):
         tracking=True,
     )
 
+    agent_custom_currency_id = fields.Many2one(
+        "res.currency",
+        string="Agent Custom Currency",
+    )
+
     agent_id = fields.Many2one(
         "res.partner",
         string="Agent",

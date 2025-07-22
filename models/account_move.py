@@ -5,19 +5,19 @@ class AccoutMove(models.Model):
     _inherit = ["agent_management.commission.mixin", "account.move"]
     _name = "account.move"
 
+    @api.depends("company_id", "partner_id.agent_id")
     def _compute_agent_currency_id(self):
         for record in self:
-            record.agent_currency_id = self.company_id.currency_id
-
-    @api.depends("company_id")
-    def _compute_agent_currency_id(self):
-        for record in self:
-            record.agent_currency_id = self.company_id.currency_id
+            if record.agent_id and record.agent_id.agent_custom_currency_id:
+                record.agent_currency_id = record.agent_id.agent_custom_currency_id
+            else:
+                record.agent_currency_id = record.company_id.currency_id
 
     agent_currency_id = fields.Many2one(
         "res.currency",
         string="Agent Currency",
-        compute=_compute_agent_currency_id
+        compute=_compute_agent_currency_id,
+        store=True,
     )
 
     amount_commission = fields.Monetary(

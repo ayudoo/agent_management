@@ -18,14 +18,15 @@
         <field name="invoice_date"/>
 
         <field name="amount_residual_signed" string="Amount Due" sum="Amount Due"/>
-        <field name="amount_commission_base" sum="Commission Base"/>
+        <field name="agent_currency_id" invisible="1"/>
+        <field name="amount_commission_base"/>
         <field
           name="agent_commission"
           string="Commission"
           widget="percentage"
           avg="Commission"/>
         <field name="commission_date" string="Commission Date"/>
-        <field name="amount_commission" string="Ammount Commission" sum="Ammount Commission"/>
+        <field name="amount_commission" string="Ammount Commission"/>
 
         <field name="currency_id" invisible="1"/>
         <field name="move_type" invisible="context.get('move_type',True)"/>

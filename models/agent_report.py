@@ -23,6 +23,14 @@ class AgentReport(models.Model):
         store=False,
     )
 
+    # invoice specific
+
+    agent_currency_id = fields.Many2one(
+        "res.currency",
+        string="Agent Currency",
+        readonly=True,
+    )
+
     # agent mixin fields
 
     agent_id = fields.Many2one(
@@ -40,6 +48,7 @@ class AgentReport(models.Model):
     )
     amount_commission_base = fields.Monetary(
         string="Commission Base",
+        currency_field="agent_currency_id",
         readonly=True,
     )
 
@@ -52,10 +61,12 @@ class AgentReport(models.Model):
     )
     amount_commission = fields.Monetary(
         string="Ammount Commission",
+        currency_field="agent_currency_id",
         readonly=True,
     )
     approved_commission = fields.Monetary(
         string="Approved Commission",
+        currency_field="agent_currency_id",
         readonly=True,
     )
 
@@ -126,6 +137,7 @@ class AgentReport(models.Model):
                 am.company_id,
                 am.commercial_partner_id,
 
+                am.agent_currency_id,
                 am.agent_id,
                 am.agent_commission,
                 am.amount_commission_base,
