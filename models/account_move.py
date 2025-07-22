@@ -16,7 +16,7 @@ class AccoutMove(models.Model):
 
     agent_currency_id = fields.Many2one(
         "res.currency",
-        sting="Agent Currency",
+        string="Agent Currency",
         compute=_compute_agent_currency_id
     )
 
