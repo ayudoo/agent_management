@@ -72,15 +72,31 @@ class AgentReport(models.Model):
 
     # other invoice fields to show in the evaluation
 
+    company_id = fields.Many2one(
+        comodel_name='res.company',
+        string="Company",
+        readonly=True,
+    )
+    currency_id = fields.Many2one("res.currency", string="Currency", readonly=True)
+    company_currency_id = fields.Many2one(
+        "res.currency", string="Currency", related='company_id.currency_id', readonly=True
+    )
+
     invoice_date = fields.Date(readonly=True)
     name = fields.Char(string="Invoice Number", readonly=True)
     amount_residual_signed = fields.Monetary(
         string="Amount Due in Invoice Currency",
         help="Remaining amount due in the currency of the invoice.",
+        currency_field="company_currency_id",
+        readonly=True,
+    )
+    amount_total_in_currency_signed = fields.Monetary(
+        string="Amount Due in Invoice Currency",
+        help="Remaining amount due in the currency of the invoice.",
+        currency_field="currency_id",
         readonly=True,
     )
 
-    currency_id = fields.Many2one("res.currency", string="Currency", readonly=True)
     partner_id = fields.Many2one("res.partner", string="Partner", readonly=True)
     commercial_partner_id = fields.Many2one(
         "res.partner", string="Partner Company", help="Commercial Entity"
@@ -134,6 +150,7 @@ class AgentReport(models.Model):
                 am.payment_state,
                 am.name,
                 am.amount_residual_signed,
+                am.amount_total_in_currency_signed,
                 am.company_id,
                 am.commercial_partner_id,
 

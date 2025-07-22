@@ -11,14 +11,17 @@
         edit="false"
         editable="bottom">
 
+        <field name="company_id" invisible="1"/>
+        <field name="currency_id" invisible="1"/>
+        <field name="company_currency_id" invisible="1"/>
+        <field name="agent_currency_id" invisible="1"/>
         <field name="state" string="Status"/>
         <field name="agent_id" string="Agent"/>
         <field name="partner_id" groups="base.group_user" string="Customer"/>
         <field name="invoice_id" widget="many2one"/>
         <field name="invoice_date"/>
-
         <field name="amount_residual_signed" string="Amount Due" sum="Amount Due"/>
-        <field name="agent_currency_id" invisible="1"/>
+        <field name="amount_total_in_currency_signed" string="Amount Due in invoice currency" optional="hide"/>
         <field name="amount_commission_base"/>
         <field
           name="agent_commission"
@@ -28,7 +31,6 @@
         <field name="commission_date" string="Commission Date"/>
         <field name="amount_commission" string="Ammount Commission"/>
 
-        <field name="currency_id" invisible="1"/>
         <field name="move_type" invisible="context.get('move_type',True)"/>
       </tree>
     </field>
