@@ -36,6 +36,10 @@
           name="agent_commission"
           widget="percentage"
           attrs="{'invisible': [('is_agent','=', False)]}"/>
+        <field
+          name="agent_custom_currency_id"
+          string="Agent Currency"
+          attrs="{'invisible': [('is_agent','=', False)]}"/>
       </field>
       <field name="category_id" position="after">
         <field name="agent_id" attrs="{'invisible': [('is_agent','=', True)]}"/>
