@@ -134,6 +134,7 @@ class AccoutMove(models.Model):
         compute=_compute_approved_commission,
         readonly=True,
         store=True,
+        currency_field="agent_currency_id",
     )
 
 
