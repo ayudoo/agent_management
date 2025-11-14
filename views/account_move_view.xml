@@ -33,7 +33,6 @@
         <field name="agent_commission" attrs="{'column_invisible': True}"/>
         <field
           name="commissionable"
-          widget="commission"
           attrs="{
             'column_invisible': [('parent.agent_id','=',False)],
             'readonly': [('can_toggle_commissionable','=',False)]

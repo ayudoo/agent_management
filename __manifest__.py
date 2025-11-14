@@ -27,9 +27,9 @@
         "wizard/approve_commission_view.xml",
     ],
     "assets": {
-        "web.assets_backend": [
-            "agent_management/static/src/js/commissionable_widget.js",
-        ],
+        # "web.assets_backend": [
+        #     "agent_management/static/src/js/commissionable_widget.js",
+        # ],
     },
     "license": "LGPL-3",
     "application": True,

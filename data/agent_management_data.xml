@@ -9,7 +9,6 @@
       <field name="sequence">99</field>
       <field name="name">Agent (B2B)</field>
       <field name="color">8</field>
-      <field name="show_line_subtotals_tax_selection">tax_excluded</field>
       <field name="is_agent">True</field>
     </record>
 
