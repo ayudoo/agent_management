@@ -23,11 +23,7 @@
         <field name="amount_residual_signed" string="Amount Due" sum="Amount Due"/>
         <field name="amount_total_in_currency_signed" optional="hide"/>
         <field name="amount_commission_base"/>
-        <field
-          name="agent_commission"
-          string="Commission"
-          widget="percentage"
-          avg="Commission"/>
+        <field name="agent_commission" string="Commission" widget="percentage" avg="Commission"/>
         <field name="commission_date" string="Commission Date"/>
         <field name="amount_commission" string="Ammount Commission"/>
 
@@ -45,11 +41,13 @@
           <field name="state" widget="statusbar" statusbar_visible="draft,posted"/>
         </header>
         <sheet string="Invoice">
-          <span class="o_form_label"><field
-            name="move_type"
-            attrs="{'invisible': [('move_type', '=', 'entry')]}"
-            readonly="1"
-            nolabel="1"/></span>
+          <span class="o_form_label">
+            <field
+              name="move_type"
+              invisible="move_type == 'entry'"
+              readonly="1"
+              nolabel="1"/>
+          </span>
           <h1 class="mt0">
             <div>
               <field name="name" readonly="1" class="oe_inline"/>
@@ -62,7 +60,7 @@
                 name="partner_id"
                 context="{'search_default_customer':1, 'show_address': 1, 'default_company_type': 'company'}"
                 options='{"always_reload": True, "no_quick_create": True}'
-                domain="[('customer_rank', '>', 0)]"/>
+                domain="[('customer_rank', '&gt;', 0)]"/>
               <field name="invoice_date"/>
             </group>
             <group>
@@ -94,37 +92,16 @@
         <filter name="posted" string="Posted" domain="[('state','=','posted')]"/>
         <filter name="draft" string="Draft" domain="[('state','=','draft')]"/>
         <separator/>
-        <filter
-          name="in_payment"
-          string="In Payment"
-          domain="[('payment_state', '=', 'in_payment'), ('state', '=', 'posted')]"/>
-        <filter
-          name="partial"
-          string="Partially Paid"
-          domain="[('payment_state', '=', 'partial'), ('state', '=', 'posted')]"/>
-        <filter
-          name="paid"
-          string="Paid"
-          domain="[('payment_state', '=', 'paid'), ('state', '=', 'posted')]"/>
-        <filter
-          name="unpaid"
-          string="Not Paid"
-          domain="[('payment_state', '=', 'not_paid'), ('state', '=', 'posted')]"/>
-        <filter
-          name="reversed"
-          string="Reversed"
-          domain="[('payment_state', '=', 'reversed'), ('state', '=', 'posted')]"/>
+        <filter name="in_payment" string="In Payment" domain="[('payment_state', '=', 'in_payment'), ('state', '=', 'posted')]"/>
+        <filter name="partial" string="Partially Paid" domain="[('payment_state', '=', 'partial'), ('state', '=', 'posted')]"/>
+        <filter name="paid" string="Paid" domain="[('payment_state', '=', 'paid'), ('state', '=', 'posted')]"/>
+        <filter name="unpaid" string="Not Paid" domain="[('payment_state', '=', 'not_paid'), ('state', '=', 'posted')]"/>
+        <filter name="reversed" string="Reversed" domain="[('payment_state', '=', 'reversed'), ('state', '=', 'posted')]"/>
         <separator/>
         <group expand="0" string="Group By">
           <filter name="group_by_agent_id" string="Agent" context="{'group_by':'agent_id'}"/>
-          <filter
-            name="group_by_partner_id"
-            string="Partner"
-            context="{'group_by':'commercial_partner_id'}"/>
-          <filter
-            name="group_by_invoice_date"
-            string="Invoice Date"
-            context="{'group_by':'invoice_date'}"/>
+          <filter name="group_by_partner_id" string="Partner" context="{'group_by':'commercial_partner_id'}"/>
+          <filter name="group_by_invoice_date" string="Invoice Date" context="{'group_by':'invoice_date'}"/>
         </group>
       </search>
     </field>

@@ -8,56 +8,43 @@
       <field name="payment_term_id" position="after">
         <field
           name="agent_id"
-          attrs="{
-            'readonly': [('state','not in',['draft','cancelled'])],
-            'invisible': [('state', 'in', ['done']),('agent_id','=',False)]
-          }"
-        />
+          readonly="state not in ['draft', 'cancelled']"
+          invisible="state in ['done'] and not agent_id"/>
         <field name="has_agent_commission" invisible="1"/>
         <field
           name="agent_commission"
           widget="percentage"
-          attrs="{
-              'readonly': [('state','not in',['draft','cancelled'])],
-              'invisible': [('agent_id','=',False)]
-            }"/>
+          readonly="state not in ['draft', 'cancelled']"
+          invisible="not agent_id"/>
       </field>
 
       <xpath
         expr="//field[@name='order_line']/tree/field[@name='price_subtotal']"
         position="before">
-        <field name="can_toggle_commissionable" attrs="{'column_invisible': True}"/>
-        <field name="agent_commission" attrs="{'column_invisible': True}"/>
+        <field name="can_toggle_commissionable" column_invisible="True"/>
+        <field name="agent_commission" column_invisible="True"/>
         <field
           name="commissionable"
-          attrs="{
-            'column_invisible': [('parent.agent_id','=',False)],
-            'readonly': [('can_toggle_commissionable','=',False)]
-          }"/>
+          column_invisible="not parent.agent_id"
+          readonly="not can_toggle_commissionable"/>
       </xpath>
 
       <xpath
         expr="//field[@name='order_line']/form//field[@name='analytic_distribution']/.."
         position="after">
         <field name="can_toggle_commissionable" invisible="1"/>
-        <label
-          for="commissionable"
-          attrs="{
-            'invisible': [('parent.agent_id','=',False)],
-          }"/>
+        <label for="commissionable" invisible="not parent.agent_id"/>
         <div>
           <field
             name="commissionable"
-            attrs="{
-              'invisible': [('parent.agent_id','=',False)],
-              'readonly': [('can_toggle_commissionable','=',False)]
-            }"/>
+            invisible="not parent.agent_id"
+            readonly="not can_toggle_commissionable"/>
         </div>
       </xpath>
 
       <xpath expr="//group[hasclass('oe_subtotal_footer')]" position="inside">
-        <field name="amount_commission_base" attrs="{'invisible': [('agent_id','=',False)]}"/>
-        <field name="amount_commission" attrs="{'invisible': [('agent_id','=',False)]}"/>
+        <field name="amount_commission_base" invisible="not agent_id"/>
+        <field name="amount_commission" invisible="not agent_id"/>
       </xpath>
     </field>
   </record>

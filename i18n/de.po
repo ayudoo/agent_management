@@ -25,11 +25,15 @@ msgstr ""
 #: model:ir.model.fields,field_description:agent_management.field_res_partner_business_relationship__is_agent
 #: model:ir.model.fields,field_description:agent_management.field_res_users__agent_id
 #: model:ir.model.fields,field_description:agent_management.field_sale_order__agent_id
-#: model:res.partner.business_relationship,name:agent_management.business_relationship_agent
 #: model_terms:ir.ui.view,arch_db:agent_management.view_agent_report_search
 #: model_terms:ir.ui.view,arch_db:agent_management.view_agent_report_tree
 msgid "Agent"
 msgstr "Vertreter"
+
+#. module: agent_management
+#: model:res.partner.business_relationship,name:agent_management.business_relationship_agent
+msgid "Agent (B2B)"
+msgstr "Vertreter (B2B)"
 
 #. module: agent_management
 #: model:ir.model.fields,field_description:agent_management.field_res_partner__agent_commission
@@ -411,12 +415,6 @@ msgid "Journal Item"
 msgstr "Buchungszeile"
 
 #. module: agent_management
-#: model:ir.model.fields,field_description:agent_management.field_account_move_approve_commission____last_update
-#: model:ir.model.fields,field_description:agent_management.field_agent_management_agent_report____last_update
-msgid "Last Modified on"
-msgstr "Zuletzt geändert am"
-
-#. module: agent_management
 #: model:ir.model.fields,field_description:agent_management.field_account_move_approve_commission__write_uid
 msgid "Last Updated by"
 msgstr "Zuletzt aktualisiert von"
@@ -481,8 +479,8 @@ msgstr "Gebucht"
 
 #. module: agent_management
 #: model:ir.model,name:agent_management.model_product_template
-msgid "Product Template"
-msgstr "Produktvorlage"
+msgid "Product"
+msgstr "Produkt"
 
 #. module: agent_management
 #: model:ir.model,name:agent_management.model_product_product
@@ -523,7 +521,7 @@ msgstr "Verkaufsauftrag"
 #. module: agent_management
 #: model:ir.model,name:agent_management.model_sale_order_line
 msgid "Sales Order Line"
-msgstr "Auftragsposition"
+msgstr "Verkaufsauftragszeile"
 
 #. module: agent_management
 #: model:ir.model.fields.selection,name:agent_management.selection__agent_management_agent_report__move_type__out_receipt

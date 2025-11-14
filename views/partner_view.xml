@@ -15,9 +15,7 @@
   <record id="view_partner_agent_manager_form" model="ir.ui.view">
     <field name="name">agent_management.base.contacts</field>
     <field name="model">res.partner</field>
-    <field
-      name="inherit_id"
-      ref="business_relationships.view_partner_business_relationship_form"/>
+    <field name="inherit_id" ref="business_relationships.view_partner_business_relationship_form"/>
     <field name="arch" type="xml">
       <div name="button_box" position="inside">
         <button
@@ -25,24 +23,20 @@
           type="object"
           icon="fa-users"
           class="oe_stat_button"
-          attrs="{'invisible': [('is_agent','=', False)]}">
+          invisible="not is_agent">
           <field string="Customers" name="agent_partner_count" widget="statinfo"/>
         </button>
       </div>
 
-      <field name="vat" position="after">
-        <field name="is_agent" invisible="1"/>
-        <field
-          name="agent_commission"
-          widget="percentage"
-          attrs="{'invisible': [('is_agent','=', False)]}"/>
-        <field
-          name="agent_custom_currency_id"
-          string="Agent Currency"
-          attrs="{'invisible': [('is_agent','=', False)]}"/>
-      </field>
+      <xpath expr="//group/group[last()]" position="after">
+        <group>
+          <field name="is_agent" invisible="1"/>
+          <field name="agent_commission" widget="percentage" invisible="not is_agent"/>
+          <field name="agent_custom_currency_id" string="Agent Currency" invisible="not is_agent"/>
+        </group>
+      </xpath>
       <field name="category_id" position="after">
-        <field name="agent_id" attrs="{'invisible': [('is_agent','=', True)]}"/>
+        <field name="agent_id" invisible="is_agent"/>
       </field>
     </field>
   </record>

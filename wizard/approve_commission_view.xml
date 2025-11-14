@@ -14,18 +14,18 @@
         <p class="oe_grey">
           You can approve the commissions of non-daft and not cancelled invoices, that are not yet
           approved. The commission date will be set accordingly.</p>
-        <p attrs="{'invisible': [('commissions_to_approve','!=',0)]}">
+        <p invisible="commissions_to_approve != 0">
           There are no invoices in the selection, whose commission can be approved.</p>
         <footer>
           <button
-            attrs="{'invisible': [('commissions_to_approve','=',0)]}"
+            invisible="commissions_to_approve == 0"
             string="Approve Commissions"
             name="move_approve_commission"
             type="object"
             default_focus="1"
             class="btn-primary"/>
           <button
-            attrs="{'invisible': [('approved_commissions','=',0)]}"
+            invisible="approved_commissions == 0"
             string="Reset Approved Commissions"
             name="invoice_reset_approved_commission"
             type="object"

@@ -10,49 +10,36 @@
       </field>
       <field name="team_id" position="after">
         <field name="commissioned" invisible="1"/>
-        <field name="agent_id"
-          attrs="{
-            'readonly': [('state','not in',['draft','cancelled'])],
-            'invisible': [('state', 'in', ['done']),('agent_id','=',False)]
-          }"
-        />
+        <field
+          name="agent_id"
+          readonly="state not in ['draft', 'cancelled']"
+          invisible="state in ['done'] and not agent_id"/>
         <field name="has_agent_commission" invisible="1"/>
         <field
           name="agent_commission"
           widget="percentage"
-          attrs="{
-              'readonly': [('commissioned','=',True)],
-              'invisible': [('agent_id','=',False)]
-            }"/>
+          readonly="commissioned"
+          invisible="not agent_id"/>
       </field>
 
       <xpath
         expr="//field[@name='invoice_line_ids']/tree/field[@name='price_subtotal']"
         position="before">
-        <field name="can_toggle_commissionable" attrs="{'column_invisible': True}"/>
-        <field name="agent_commission" attrs="{'column_invisible': True}"/>
+        <field name="can_toggle_commissionable" column_invisible="True"/>
+        <field name="agent_commission" column_invisible="True"/>
         <field
           name="commissionable"
-          attrs="{
-            'column_invisible': [('parent.agent_id','=',False)],
-            'readonly': [('can_toggle_commissionable','=',False)]
-          }"/>
+          column_invisible="not parent.agent_id"
+          readonly="not can_toggle_commissionable"/>
       </xpath>
 
       <xpath expr="//field[hasclass('oe_subtotal_footer_separator')]" position="after">
         <field name="agent_currency_id" invisible="1"/>
         <field name="commissioned" invisible="1"/>
-        <field name="amount_commission_base" attrs="{'invisible': [('agent_id','=',False)]}"/>
-        <field
-          name="amount_commission"
-          attrs="{'invisible': ['|',('agent_id','=',False),('commissioned','=',True)]}"/>
-        <field
-          name="approved_commission"
-          attrs="{'invisible': ['|',('agent_id','=',False),('commissioned','=',False)]}"/>
-        <field
-          name="commission_date"
-          string="Approved on"
-          attrs="{'invisible': ['|',('agent_id','=',False),('commissioned','=',False)]}"/>
+        <field name="amount_commission_base" invisible="not agent_id"/>
+        <field name="amount_commission" invisible="not agent_id or commissioned"/>
+        <field name="approved_commission" invisible="not agent_id or not commissioned"/>
+        <field name="commission_date" string="Approved on" invisible="not agent_id or not commissioned"/>
       </xpath>
     </field>
   </record>

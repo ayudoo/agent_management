@@ -9,9 +9,7 @@
       <xpath expr="//page[@name='sales']/group[@name='sale']" position="inside">
         <group string="Agent Management">
           <field name="can_be_commissionable" invisible="1"/>
-          <field
-            name="commissionable"
-            attrs="{'readonly': [('can_be_commissionable', '=', False)]}"/>
+          <field name="commissionable" readonly="not can_be_commissionable"/>
         </group>
       </xpath>
     </field>
