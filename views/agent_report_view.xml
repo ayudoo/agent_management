@@ -21,7 +21,7 @@
         <field name="invoice_id" widget="many2one"/>
         <field name="invoice_date"/>
         <field name="amount_residual_signed" string="Amount Due" sum="Amount Due"/>
-        <field name="amount_total_in_currency_signed" string="Amount Due in invoice currency" optional="hide"/>
+        <field name="amount_total_in_currency_signed" optional="hide"/>
         <field name="amount_commission_base"/>
         <field
           name="agent_commission"

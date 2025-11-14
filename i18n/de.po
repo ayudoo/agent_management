@@ -89,6 +89,11 @@ msgstr "Fälliger Betrag"
 
 #. module: agent_management
 #: model:ir.model.fields,field_description:agent_management.field_agent_management_agent_report__amount_residual_signed
+msgid "Amount Due in Company Currency"
+msgstr "Fehlender Betrag in Unternehmenswährung"
+
+#. module: agent_management
+#: model:ir.model.fields,field_description:agent_management.field_agent_management_agent_report__amount_total_in_currency_signed
 msgid "Amount Due in Invoice Currency"
 msgstr "Fehlender Betrag in Rechnungswährung"
 
@@ -237,6 +242,16 @@ msgstr "Provisioniert"
 #: model:ir.model.fields,field_description:agent_management.field_account_move_approve_commission__commissions_to_approve
 msgid "Commissions to Approve"
 msgstr "Provisionen zum Bestätigen"
+
+#. module: agent_management
+#: model:ir.model.fields,field_description:agent_management.field_agent_management_agent_report__company_id
+msgid "Company"
+msgstr "Unternehmen"
+
+#. module: agent_management
+#: model:ir.model.fields,field_description:agent_management.field_agent_management_agent_report__company_currency_id
+msgid "Company Currency"
+msgstr "Unternehmenswährung"
 
 #. module: agent_management
 #: model:ir.model,name:agent_management.model_res_partner
@@ -480,7 +495,7 @@ msgid "Purchase Receipt"
 msgstr "Einkauf Bestätigung"
 
 #. module: agent_management
-#: model:ir.model.fields,help:agent_management.field_agent_management_agent_report__amount_residual_signed
+#: model:ir.model.fields,help:agent_management.field_agent_management_agent_report__amount_total_in_currency_signed
 msgid "Remaining amount due in the currency of the invoice."
 msgstr "Übriger offener Betrag in der Rechnungswährung"
 

@@ -79,14 +79,13 @@ class AgentReport(models.Model):
     )
     currency_id = fields.Many2one("res.currency", string="Currency", readonly=True)
     company_currency_id = fields.Many2one(
-        "res.currency", string="Currency", related='company_id.currency_id', readonly=True
+        "res.currency", string="Company Currency", related='company_id.currency_id', readonly=True
     )
 
     invoice_date = fields.Date(readonly=True)
     name = fields.Char(string="Invoice Number", readonly=True)
     amount_residual_signed = fields.Monetary(
-        string="Amount Due in Invoice Currency",
-        help="Remaining amount due in the currency of the invoice.",
+        string="Amount Due in Company Currency",
         currency_field="company_currency_id",
         readonly=True,
     )
