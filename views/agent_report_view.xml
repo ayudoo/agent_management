@@ -4,7 +4,7 @@
     <field name="name">agent_management.agent_evaluation.tree</field>
     <field name="model">agent_management.agent_report</field>
     <field name="arch" type="xml">
-      <tree
+      <list
         string="Invoice"
         decoration-info="commission_date == False"
         create="false"
@@ -28,7 +28,7 @@
         <field name="amount_commission" string="Ammount Commission"/>
 
         <field name="move_type" invisible="context.get('move_type',True)"/>
-      </tree>
+      </list>
     </field>
   </record>
 
@@ -110,7 +110,7 @@
   <record id="action_agent_evaluation" model="ir.actions.act_window">
     <field name="name">Agent Evaluation</field>
     <field name="res_model">agent_management.agent_report</field>
-    <field name="view_mode">tree,form,pivot,graph</field>
+    <field name="view_mode">list,form,pivot,graph</field>
     <field name="context">{
       'search_default_group_by_agent_id': 1,
       'search_default_group_by_invoice_date': 1,
@@ -123,7 +123,7 @@
       name="view_ids"
       eval="[
           (5, 0, 0),
-          (0, 0, {'view_mode': 'tree', 'view_id': ref('view_agent_report_tree')}),
+          (0, 0, {'view_mode': 'list', 'view_id': ref('view_agent_report_tree')}),
           (0, 0, {'view_mode': 'form', 'view_id': ref('view_agent_report_form')}),
         ]"/>
     <field name="search_view_id" ref="view_agent_report_search"/>

@@ -43,7 +43,7 @@ class AgentReport(models.Model):
         digits=(3, 2),
         string="Commission",
         help="The agent's commission",
-        group_operator="avg",
+        aggregator="avg",
         readonly=True,
     )
     amount_commission_base = fields.Monetary(

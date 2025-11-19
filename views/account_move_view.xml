@@ -23,7 +23,7 @@
       </field>
 
       <xpath
-        expr="//field[@name='invoice_line_ids']/tree/field[@name='price_subtotal']"
+        expr="//field[@name='invoice_line_ids']/list/field[@name='price_subtotal']"
         position="before">
         <field name="can_toggle_commissionable" column_invisible="True"/>
         <field name="agent_commission" column_invisible="True"/>

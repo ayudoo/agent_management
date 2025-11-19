@@ -5,7 +5,7 @@ Agent Management
    :target: http://www.gnu.org/licenses/lgpl-3.0-standalone.html
    :alt: License: LGPL-3
 
-**This is the Odoo 17 branch*
+**This is the Odoo 18 branch*
 
 **This module is in pre-alpha state and will change to a higher extend.
 Feel free to provide feedback.**

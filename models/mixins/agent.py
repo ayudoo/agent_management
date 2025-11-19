@@ -68,7 +68,7 @@ class CommissionMixin(models.AbstractModel):
         digits=(3, 2),
         string="Commission",
         help="The commission for this document",
-        group_operator="avg",
+        aggregator="avg",
         tracking=True,
     )
 
